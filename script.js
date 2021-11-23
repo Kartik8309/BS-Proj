@@ -1,6 +1,6 @@
 
 /* initializations and DOM elements */
-const axios = require('axios')
+const axios = require('axios');
 const form = document.querySelector("#contact-form");
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
