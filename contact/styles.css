@@ -34,23 +34,7 @@
     background-color: #544de0;
 }
 
-.contentText{
-
-    padding-top: 10px;
-    font-weight: 500;
-}
-
-.contentImg1{
-    padding: 20px;
-    height: 45vh;
-}
-
-.content1{
-    background-color: #d8d6fc;
-    border-radius: 5px;
-}
-
-/* CARD Styling */
+/* Card Styling */
 .card-style{
     width: 40vh;
 }
@@ -68,14 +52,9 @@
     transform: translateY(-15px);
 }
 
-/* Content 2 styling */
-.contentImg2 {
-    padding: 50px;
-    height: 40vh;
-}
 
-/* Pricing styling */
-.pricing:hover{
+/* form container */
+.formContainer {
     background-color: #f0effc;
 }
 
