@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: "Poppins";
+}
+
+.links {
+    color: #6c63ff;
+    text-decoration: none;
+    font-size: medium;
+    margin: 10px;
+}
+
+.links:hover {
+    color: #6c63ff;
+}
+
+.brand-img {
+    height: 6vh;
+}
+
+/* CARD Styling */
+.card-style{
+    width: 40vh;
+}
+
+.seo-img {
+    height: 20vh;
+    width:20vh;
+}
+
+.animated{
+    transition: transform 0.2s ease-out;
+}
+
+.animated:hover {
+    transform: translateY(-15px);
+}
+
+
+/* content 1 styling */
+.contentImg1{
+    height: 40vh;
+}
+
+/* footer styling */
+.footer{
+    background-color: #f0effc;
+    border: 1px solid;
+}
