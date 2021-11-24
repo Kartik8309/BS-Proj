@@ -4,6 +4,10 @@
     font-family: "Poppins";
 }
 
+.brand-img {
+    height: 6vh;
+}
+
 .links {
     color: #6c63ff;
     text-decoration: none;
@@ -13,13 +17,6 @@
 
 .links:hover {
     color: #6c63ff;
-}
-
-.brand {
-    color: #6c63ff;
-    text-decoration: none;
-    font-size: larger;
-    font-weight: 600;
 }
 
 .navBtn{

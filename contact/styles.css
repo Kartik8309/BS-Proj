@@ -15,11 +15,8 @@
     color: #6c63ff;
 }
 
-.brand {
-    color: #6c63ff;
-    text-decoration: none;
-    font-size: larger;
-    font-weight: 600;
+.brand-img {
+    height: 6vh;
 }
 
 .navBtn{
@@ -57,6 +54,7 @@
 /* form container */
 .formContainer {
     background-color: #f0effc;
+    border-radius: 10px;
 }
 
 /* footer styling */

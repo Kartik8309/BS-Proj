@@ -1,6 +1,6 @@
 
 /* initializations and DOM elements */
-const axios = require('axios');
+
 const form = document.querySelector("#contact-form");
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
@@ -17,6 +17,8 @@ const postClient = (firstname,lastname,email,message) => {
         email:email,
         message:message,
     })
+    .then(res=>console.log(res.data))
+    .catch(err => console.log(err))
 }
 
 const formSubmit = (e) =>{
