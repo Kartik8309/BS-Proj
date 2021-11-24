@@ -48,3 +48,12 @@
     background-color: #f0effc;
     border: 1px solid;
 }
+
+.navBtn{
+    color:white;
+    background-color: #6c63ff;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+}

@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.24.0",
+    "ejs": "^3.1.6",
     "json-server": "^0.17.0"
   },
   "name": "bootstrap_project",
