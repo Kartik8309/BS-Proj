@@ -2,18 +2,39 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
+require('dotenv/config')
+const Form = require("./model/form")
 //mongoose.connect("mongodb://localhost/")
 
-app.use(express.urlencoded()); 
-app.use(express.json());
+/* app.use(express.urlencoded()); 
+app.use(express.json()); */
 
-app.post('/contact',(req,res)=>{
+mongoose.connect(process.env.DB_CONNECTION_STRING,{useNewUrlParser:true})
+
+const db = mongoose.connection;
+db.on("error",error=>console.error(error));
+db.once("open",()=>console.log("connected"));
+
+
+
+/* app.post('/contact',(req,res)=>{
     console.log(req.body.name)
     res.send("req accepted")
+}) */
+
+
+
+app.post('/contact', async (req,res)=>{
+    try {
+        const myForm = new Form(req.body);
+        await myForm.save();
+        res.send(myForm);
+    } catch (error) {
+        res.send(error)
+    }
 })
 
-app.listen(3000);
+app.listen(process.env.PORT);
 
 
 
