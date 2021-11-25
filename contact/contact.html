@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto ms-5 mb-lg-0">
               <li class="nav-item">
-                <a class="links" href="#">About</a>
+                <a class="links" href="../about/about.html">About</a>
               </li>
               <li class="nav-item">
                 <a class="links" href="../service/service.html">
@@ -95,7 +95,7 @@
 
 
       <!-- contact form starts -->
-      <div class="container formContainer mt-5 p-4">
+      <div class="container formContainer mt-5 p-4 shadow">
         <h2>Get In Touch</h2>
         <div class="mt-4">
           <form id ="contact-form">
@@ -128,7 +128,7 @@
                 <div class="col-3">
                     <p class="fs-4">Company</p>
                     <ul>
-                        <li> <a href="#" class="text-decoration-none text-dark" >About</a></li>
+                        <li> <a href="../about/about.html" class="text-decoration-none text-dark" >About</a></li>
                         <li><a href="../service/service.html" class="text-decoration-none text-dark" >Services</a></li>
                         <li><a href="../contact/contact.html" class="text-decoration-none text-dark" >Contact</a></li>
                     </ul>
@@ -170,17 +170,15 @@
     const submitBtn = document.querySelector("#submitBtn");
     let firstNameval,lastNameval,emailval,messageval;
 
-    const postClient = (firstname,lastname,email,message) => {
-
-    axios.post("http://localhost:8000/clients",{
+    const postClient = async (firstname,lastname,email,message) => {
+    const response = await axios.post("http://localhost:8000/clients",{
         id:Math.floor(Math.random() *1000),
         first_name:firstname,
         last_name:lastname,
         email:email,
         message:message,
     })
-        .then(res=>console.log(res.data))
-        .catch(err => console.log(err))
+        console.log(response);
     }
 
     const formSubmit = (e) =>{
