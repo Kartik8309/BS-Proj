@@ -2,7 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require('dotenv/config')
+
+//Models
 const Form = require("./model/form")
+const Plan = require("./model/plan")
+
+//JSON MIDDLEWARE TO GET DATA FROM REQUEST BODY
 app.use(express.json())
 
 //CORS 
@@ -19,10 +24,8 @@ const db = mongoose.connection;
 db.on("error",error=>console.error(error));
 db.once("open",()=>console.log("connected"));
 
-//POST ROUTE
+//CONTACT POST ROUTE
 app.post('/contact',(req,res)=>{
-    console.log(req.body)
-    
     const postForm = new Form({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
@@ -35,6 +38,25 @@ app.post('/contact',(req,res)=>{
         }
         else{
             res.status(200).json({success:true});
+        }
+    })
+})
+
+//PLAN POST ROUTE
+app.post('/plans',(req,res)=>{
+    const postPlan = new Plan({
+        firstname:req.body.firstanme,
+        lastname:req.body.lastname,
+        email:req.body.email,
+        plan:req.body.planName
+    })
+    postPlan.save(err => {
+        if(err) {
+            /* res.status(500).json({success:false}) */
+            console.log(err);
+        }
+        else {
+            res.status(200).json({success:true})
         }
     })
 })
