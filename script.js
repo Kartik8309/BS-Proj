@@ -1,30 +1,43 @@
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 require('dotenv/config')
 const Form = require("./model/form")
-/* const bodyParser = require("body-parser") */
-/* app.use(express.urlencoded()); 
-app.use(express.json()); */
-
 app.use(express.json())
 
+//CORS 
+const cors = require('cors')
+app.use(cors({
+    origin:"http://127.0.0.1:5500",
+}))
+
+//CONNECTING TO DB
 mongoose.connect(process.env.DB_CONNECTION_STRING,{useNewUrlParser:true})
 
+//VERIFYING CONNECTION
 const db = mongoose.connection;
 db.on("error",error=>console.error(error));
 db.once("open",()=>console.log("connected"));
 
-//check how to use formRouter
-
-
+//POST ROUTE
 app.post('/contact',(req,res)=>{
-    console.log(req.body.firstName)
-    res.send("req accepted")
+    console.log(req.body)
+    
+    const postForm = new Form({
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        email:req.body.email,
+        message:req.body.message
+    })
+    postForm.save(err=>{
+        if(err) {
+           res.send(err);
+        }
+        else{
+            res.status(200).json({success:true});
+        }
+    })
 })
-//const formRouter = require('./routes/contact')
-
 
 app.listen(process.env.PORT);
 
