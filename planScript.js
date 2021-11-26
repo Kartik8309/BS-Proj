@@ -24,7 +24,7 @@ function postRequest(firstNameVal,lastNameVal,emailVal,radioVal){
     .then(data =>{
         if(data.success == true){
             planRes.classList.add("bg-success","fs-4","text-light");
-            planRes.innerHTML="form submitted succesfully";
+            planRes.innerHTML="Details sent succesfully";
             window.setTimeout(closeDiv,4000);
         }
         else{
