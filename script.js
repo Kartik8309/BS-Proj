@@ -31,7 +31,7 @@ app.post('/contact',(req,res)=>{
     })
     postForm.save(err=>{
         if(err) {
-           res.send(err);
+           res.status(500).json({success:false});
         }
         else{
             res.status(200).json({success:true});
