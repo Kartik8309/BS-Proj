@@ -53,7 +53,7 @@ app.post('/plans',(req,res)=>{
     postPlan.save(err => {
         if(err) {
             /* res.status(500).json({success:false}) */
-            console.log(err);
+            res.status(500).json({success:false})
         }
         else {
             res.status(200).json({success:true})
